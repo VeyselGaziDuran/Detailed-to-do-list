@@ -12,9 +12,25 @@ const alertSuccess = document.querySelector(".alert-success");
 function addTodo(e) {
     e.preventDefault();
 
-    // creat todo div
+    const isEmpty = str => !str.trim().length;
+
+    if(isEmpty(todoInput.value)){
+      alertWarning.style.display = "block";
+      setTimeout(() => {
+        alertWarning.style.display = "none";
+      }, 1500);
+    }else{
+      alertSuccess.style.display = "block";
+      setTimeout(() => {
+        alertSuccess.style.display = "none";
+      }, 1500);
+
+      // clear todo input value
+    todoInput.value = "";
+
+      // creat todo div
     const todoDIv = document.createElement("div");
-    todoDIv.classList.add("todo")
+    todoDIv.classList.add("todo");
 
     // check mark button
     const completedButton = document.createElement("button");
@@ -39,6 +55,10 @@ function addTodo(e) {
 
     // clear todo input value
     todoInput.value = "";
+
+    }
+
+    
 
   }
 
