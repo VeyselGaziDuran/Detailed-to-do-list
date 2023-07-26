@@ -88,6 +88,7 @@ select {
   padding: 2rem;
   cursor: pointer;
   transition: all 0.3s ease;
+  pointer-events: none;
 }
 
 .select:hover::after {
@@ -195,4 +196,9 @@ select {
 .todo.fall {
   transform: translateY(16rem) rotateZ(360deg);
   opacity: 0;
+}
+
+.completed{
+    opacity: 0.5;
+    text-decoration: line-through;
 }
